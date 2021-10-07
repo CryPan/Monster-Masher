@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-           Instantiate(BloodParticleSpawn[Random.Range(0, BloodParticleSpawn.Length)]);
+          Instantiate(BloodParticleSpawn[Random.Range(0, BloodParticleSpawn.Length)]);
 
         }
 

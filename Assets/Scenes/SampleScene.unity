@@ -314,8 +314,10 @@ MonoBehaviour:
   ParticleSpawns: []
   KillMonsterParticleSpawn:
   - {fileID: 3913686301120463179, guid: 546296fa82eac614e817b2c5bc722f31, type: 3}
-  Monster1Life: {fileID: 0}
+  MonsterLifeText: {fileID: 1848056241}
+  SwapMonster: 1
   Monster1Health: 0
+  Monster2Health: 0
 --- !u!212 &952960440
 SpriteRenderer:
   m_ObjectHideFlags: 0
