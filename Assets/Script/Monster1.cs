@@ -18,7 +18,7 @@ public class Monster1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Monster1Health = 5;
+        Monster1Health = 50;
         Monster2Health = 100;
         //player.monster1health = ;
     }
@@ -26,7 +26,16 @@ public class Monster1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.Space)))
+        {
+            Monster1Fight();
+            Monster2Fight();
+        }
+        
+
+    }
+
+    void Monster1Fight()
         {
 
             if (SwapMonster == 1)
@@ -36,7 +45,6 @@ public class Monster1 : MonoBehaviour
                 if (Monster1Health == 0)
                 {
                     Debug.Log(Monster1Health);
-                    Destroy(gameObject);
                     Instantiate(KillMonsterParticleSpawn[Random.Range(0, KillMonsterParticleSpawn.Length)]);
                     Debug.Log(Monster1Health);
                     MonsterLifeText.text = "Monsters 1 Life " + Monster1Health;
@@ -46,10 +54,11 @@ public class Monster1 : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+
+       void Monster2Fight ()
         {
-            if (SwapMonster == 2)
-            {
+             if (SwapMonster == 2)
+              {
                 Debug.Log(SwapMonster + "Start");
                 Monster2Health -= 1;
                 MonsterLifeText.text = "Monsters 2 Life " + Monster2Health;
@@ -62,10 +71,7 @@ public class Monster1 : MonoBehaviour
                     MonsterLifeText.text = "Monsters 2 Life " + Monster2Health;
                     SwapMonster++;
                 }
-            }
-        }
-
-
-    }
+              }
+          }
 
 }
