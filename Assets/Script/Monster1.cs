@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+
 
 public class Monster1 : MonoBehaviour
 {
-    Player player;
+    //Player player;
+    public GameObject[] ParticleSpawns = null;
+    public GameObject[] KillMonsterParticleSpawn = null;
+    public Text Monster1LifeText = null;
 
-
-        public float Monster1Health;
+    public float Monster1Health;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,9 @@ public class Monster1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
@@ -29,7 +36,13 @@ public class Monster1 : MonoBehaviour
 
         if (Monster1Health == 0)
        {
+            //Monster1Health 0;
+            Debug.Log(Monster1Health);
             Destroy(gameObject);
-       }
+            Instantiate(KillMonsterParticleSpawn[Random.Range(0, KillMonsterParticleSpawn.Length)]);
+            Debug.Log(Monster1Health);
+        }
+
+        Monster1LifeText.text = "Monsters Life " + Monster1Health;
     }
 }

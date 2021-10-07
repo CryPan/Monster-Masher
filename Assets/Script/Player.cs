@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
 
     public GameObject[] ParticleSpawns = null;
     public GameObject[] BloodParticleSpawn = null;
-    public GameObject bloodparticle = null;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -20,10 +22,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            foreach (GameObject obj in ParticleSpawns)
-            {
-                Instantiate(bloodparticle, obj.transform.position, obj.transform.rotation);
-            }
+
+           Instantiate(BloodParticleSpawn[Random.Range(0, BloodParticleSpawn.Length)]);
 
         }
 
